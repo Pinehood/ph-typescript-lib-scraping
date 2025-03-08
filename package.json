@@ -1,5 +1,5 @@
 {
-  "name": "ph-scraping-lib",
+  "name": "ph-typescript-lib-scraping",
   "version": "1.0.0",
   "scripts": {
     "lint": "eslint \"./src/**/*.ts\"",
@@ -24,6 +24,7 @@
     "cheerio": "^1.0.0",
     "domhandler": "^5.0.3",
     "jsonpath": "^1.1.1",
-    "ph-scraping-lib": "file:"
+    "ph-scraping-lib": "file:",
+    "ph-typescript-lib-scraping": "file:"
   }
 }

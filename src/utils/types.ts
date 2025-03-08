@@ -99,7 +99,7 @@ export type ContentSubmitter =
   | ConsoleLogContentSubmitter;
 
 export type ScraperConfig = {
-  use: Lowercase<keyof typeof EScraperUseForRequests>;
+  use: TScraperUseForRequests;
   name: string;
   base: string;
   favicon: string;
