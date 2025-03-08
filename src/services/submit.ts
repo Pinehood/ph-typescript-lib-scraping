@@ -16,13 +16,14 @@ export class SubmitService {
   ): Promise<boolean> {
     if (content.entries?.length > 0) {
       switch (submitter.type) {
-        case EContentSubmitterTypes.REQUEST:
+        case EContentSubmitterTypes.REQUEST: {
           const response = await RequestService.send(use, submitter.url, {
             method: submitter.method,
             headers: submitter.headers,
             body: content,
           });
           return response?.status.toString().startsWith(OK) ?? false;
+        }
 
         case EContentSubmitterTypes.FILE:
           fs.writeFileSync(submitter.destination, JSON.stringify(content));

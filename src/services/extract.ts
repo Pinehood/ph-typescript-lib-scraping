@@ -22,7 +22,7 @@ export class ExtractService {
         );
         break;
 
-      case ELinkExtractorTypes.HTML:
+      case ELinkExtractorTypes.HTML: {
         const $ = cheerio.load(data);
         $(config.links.selector).each((_, el) => {
           const link = TransformService.link($(el).attr(HREF)!, config);
@@ -31,12 +31,14 @@ export class ExtractService {
           }
         });
         break;
+      }
 
-      case ELinkExtractorTypes.JSON:
+      case ELinkExtractorTypes.JSON: {
         const selector = config.links.selector;
         const json = JSON.parse(data) as object;
         links.push(...jsonpath.query(json, selector));
         break;
+      }
 
       default:
         break;
